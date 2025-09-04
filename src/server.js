@@ -1,19 +1,14 @@
 import express from "express";
 import { config } from "dotenv";
-import cors from "cors"; // Importa o middleware CORS
-
-import routes from "./routes/index.routes.js";
+import filmeRoutes from "./routes/filmeRoutes.js";
 
 config(); // Carrega variáveis de ambiente do arquivo .env
-const port = process.env.PORT || 4001; // Define a porta do servidor
-
-// Inicializa o Express
+const port = process.env.PORT || 4000; // Define a porta do servidor
 const app = express();
-app.use(cors()); // Habilita CORS para todas as rotas
 
-app.use(express.json()); // Parse de JSON
-
-app.use("/", routes);
+app.use(express.json()); 
+app.get("/", (req, res) => res.json({ message: "API de filmes on!" }));
+app.use("/filmes", filmeRoutes);
 
 // Iniciar o servidor
 app.listen(port, () => {
