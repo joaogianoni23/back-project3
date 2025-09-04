@@ -13,6 +13,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Produto {
+  id          Int     @id @default(autoincrement())
+  nome       String
+  marca      String
+  preco      Float
+  categoria  String?
+  cor        String?
+  estoque    Int?
+  imageUrl   String?
+  descricao  String?
+ 
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 
 
 model User {
