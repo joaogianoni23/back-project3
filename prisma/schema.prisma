@@ -13,16 +13,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Produto {
+model Filme {
   id          Int     @id @default(autoincrement())
-  nome       String
-  marca      String
-  preco      Float
-  categoria  String?
-  cor        String?
-  estoque    Int?
-  imageUrl   String?
-  descricao  String?
+  title       String
+  director      String
+  synopsis  String?
+  genre        String?
+  duration    Int?
+  rating   String?
+  releaseYear  Int
  
 
   createdAt DateTime @default(now())

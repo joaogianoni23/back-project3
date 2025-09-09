@@ -1,7 +1,5 @@
 import prisma from "../../prisma/prisma.js";
 
-
-
 class FilmeModel {
   async findAll() {
     const filmes = await prisma.filme.findMany({
