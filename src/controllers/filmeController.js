@@ -25,8 +25,8 @@ class FilmeController {
   }
   async create(req, res) {
     try {
-      const { title, director, synopsis, genre, duration, rating, releaseYear } = req.body;
-      if (!title || !director || !synopsis || !genre || !duration || !rating || !releaseYear) {
+      const { title, director, synopsis, indicativeRating, genre, duration, rating, releaseYear } = req.body;
+      if (!title || !director || !synopsis || !indicativeRating || !genre || !duration || !rating || !releaseYear) {
         return res.status(400).json({ error: "Todos os campos são obrigatórios" });
       }
       const filmeModel = new FilmeModel();

@@ -18,9 +18,10 @@ model Filme {
   title       String
   director      String
   synopsis  String?
+  indicativeRating  Int?
   genre        String?
-  duration    Int?
-  rating   String?
+  duration    String
+  rating   Float
   releaseYear  Int
  
 
