@@ -23,6 +23,8 @@ model Filme {
   duration    String
   rating   Float
   releaseYear  Int
+  image       String?
+  watchUrl    String?
  
 
   createdAt DateTime @default(now())
