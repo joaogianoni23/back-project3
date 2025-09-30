@@ -19,7 +19,7 @@ class FilmeModel {
     return filme;
   }
 
-  async create({ title, director, synopsis, indicativeRating, genre, duration, rating, releaseYear }) {
+  async create({ title, director, synopsis, indicativeRating, genre, duration, rating, releaseYear, image, watchUrl }) {
     const filme = await prisma.filme.create({
       data: {
         title, 
@@ -29,7 +29,9 @@ class FilmeModel {
         genre, 
         duration, 
         rating, 
-        releaseYear
+        releaseYear,
+        image,
+        watchUrl
       }
     });
     return filme;

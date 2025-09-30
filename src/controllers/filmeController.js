@@ -26,8 +26,8 @@ class FilmeController {
   async create(req, res) {
     try {
       const { title, director, synopsis, indicativeRating, genre, duration, rating, releaseYear, image, watchUrl } = req.body;
-      if (!title || !director || !synopsis || !genre || !duration || !rating || !releaseYear) {
-        return res.status(400).json({ error: "Campos obrigatórios: title, director, synopsis, genre, duration, rating, releaseYear" });
+      if (!title || !director || !synopsis || !genre || !duration || !rating || !releaseYear || !image || !watchUrl) {
+        return res.status(400).json({ error: "Campos obrigatórios: title, director, synopsis, genre, duration, rating, releaseYear, image, watchUrl" });
       }
       
       // Validar e converter indicativeRating
@@ -64,7 +64,6 @@ class FilmeController {
       const { id } = req.params;
       const updateData = { ...req.body };
       
-      // Validar e converter indicativeRating se estiver presente
       if (updateData.indicativeRating !== undefined) {
         if (updateData.indicativeRating === null || updateData.indicativeRating === "") {
           updateData.indicativeRating = null;
